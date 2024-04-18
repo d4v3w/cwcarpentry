@@ -2,7 +2,7 @@
 
 # TODO
 
-- [] Make it deploy
+- [x] Make it deploy
 - [] Scaffold UI
 - [] Add image gallery
 - [] Image page + routing
