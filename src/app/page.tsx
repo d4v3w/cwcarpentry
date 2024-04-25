@@ -20,9 +20,10 @@ export default async function HomePage() {
 
       <Images />
 
-      <HoverBox />
-
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+        <section className="col-span-2">
+          <HoverBox />
+        </section>
         <section>
           <h3 className="text-2xl font-bold">Services</h3>
           <p className="text-lg text-gray-200">We offer following services</p>
