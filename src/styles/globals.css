@@ -70,6 +70,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -87,6 +88,7 @@
   from {
     translate: 0 0;
   }
+
   to {
     translate: var(--x) var(--y);
   }
@@ -96,6 +98,7 @@
   from {
     translate: var(--x) var(--y);
   }
+
   to {
     translate: 0 0;
   }
@@ -103,6 +106,7 @@
 
 @layer components {
   .hover-box {
+    touch-action: none;
     display: grid;
     width: min(250px, 50%);
     margin: auto;
