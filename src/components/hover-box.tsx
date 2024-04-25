@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, type ElementRef, type MouseEvent } from "react";
+import { useRef, type ElementRef, type PointerEvent } from "react";
 
 export default function HoverBox() {
   const boxRef = useRef<ElementRef<"div">>(null);
 
-  const updatePosition = (event: MouseEvent<HTMLDivElement>) => {
+  const updatePosition = (event: PointerEvent<HTMLDivElement>) => {
     if (boxRef.current) {
       // because we're starting in the middle
       const x = event.nativeEvent.offsetX - boxRef.current.offsetWidth / 2;
@@ -17,8 +17,6 @@ export default function HoverBox() {
   };
 
   return (
-    <div className="hover-box" ref={boxRef}
-     onMouseMove={updatePosition}
-     onTouchMove={updatePosition}></div>
+    <div className="hover-box" ref={boxRef} onPointerMove={updatePosition}></div>
   );
 }
