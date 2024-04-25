@@ -17,6 +17,11 @@ export default function HoverBox() {
   };
 
   return (
-    <div className="hover-box" ref={boxRef} onPointerMove={updatePosition}></div>
+    <div
+      className="hover-box"
+      ref={boxRef}
+      onPointerMove={updatePosition}
+      onPointerOut={updatePosition}
+    ></div>
   );
 }
