@@ -17,6 +17,8 @@ export default function HoverBox() {
   };
 
   return (
-    <div className="hover-box" ref={boxRef} onMouseMove={updatePosition}></div>
+    <div className="hover-box" ref={boxRef}
+     onMouseMove={updatePosition}
+     onTouchMove={updatePosition}></div>
   );
 }
