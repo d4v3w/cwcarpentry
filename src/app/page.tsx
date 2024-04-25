@@ -3,7 +3,7 @@ import Images from "~/components/images";
 
 export const dynamic = "force-dynamic";
 
-async function Content() {
+export default async function HomePage() {
   return (
     <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
       <article>
@@ -47,8 +47,4 @@ async function Content() {
       </div>
     </div>
   );
-}
-
-export default async function HomePage() {
-  return <Content />;
 }
