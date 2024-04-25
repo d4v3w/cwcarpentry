@@ -114,7 +114,6 @@
       inset 0 0 0.5rem hsl(200, 100%, 70%);
     overflow: hidden;
     touch-action: none;
-    }
   }
 
   .hover-box::before {
