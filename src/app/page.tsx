@@ -1,15 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function HomePage() {
+import { getMyImages } from "~/server/queries";
+
+export const dynamic = "force-dynamic";
+
+async function Content() {
   return (
     <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
       <article>
-        <Image
-          src="https://utfs.io/f/f0176510-5ec5-46ae-9672-b34a282d3012-upvscp.jpg"
-          alt="CW Carpentry Logo"
-          width={100}
-          height={100}
-        />
         <h2 className="text-2xl font-bold">
           Welcome to Chris Williams Carpentry
         </h2>
@@ -20,6 +19,9 @@ export default function HomePage() {
         </p>
         <p className="text-sm text-gray-400">Chris Williams</p>
       </article>
+
+      <Images />
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
         <section>
           <h3 className="text-2xl font-bold">Services</h3>
@@ -44,5 +46,35 @@ export default function HomePage() {
         </section>
       </div>
     </div>
+  );
+}
+
+async function Images() {
+  const images = await getMyImages();
+
+  return (
+    <div className="flex flex-wrap justify-center gap-4 p-4">
+      {images.map((image) => (
+        <div key={image.id} className="flex h-48 w-48 flex-col">
+          <Link href={`/img/${image.id}`}>
+            <Image
+              src={image.url}
+              style={{ objectFit: "contain" }}
+              width={192}
+              height={192}
+              alt={image.name}
+            />
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default async function HomePage() {
+  return (
+    <main className="">
+      <Content />
+    </main>
   );
 }
