@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import { getMyImages } from "~/server/queries";
+import HoverBox from "~/components/hover-box";
+import Images from "~/components/images";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +19,8 @@ async function Content() {
       </article>
 
       <Images />
+
+      <HoverBox />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
         <section>
@@ -49,32 +49,6 @@ async function Content() {
   );
 }
 
-async function Images() {
-  const images = await getMyImages();
-
-  return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
-      {images.map((image) => (
-        <div key={image.id} className="flex h-48 w-48 flex-col">
-          <Link href={`/img/${image.id}`}>
-            <Image
-              src={image.url}
-              style={{ objectFit: "contain" }}
-              width={192}
-              height={192}
-              alt={image.name}
-            />
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default async function HomePage() {
-  return (
-    <main className="">
-      <Content />
-    </main>
-  );
+  return <Content />;
 }

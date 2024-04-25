@@ -1,1 +1,5 @@
-{}
+{
+  "css.customData": [".vscode/tailwind.json"],
+  "jest.jestCommandLine": "pnpm test",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

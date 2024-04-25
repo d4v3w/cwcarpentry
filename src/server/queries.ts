@@ -10,6 +10,34 @@ export async function getMyImages() {
       desc: "hello",
       date: Date.now().toLocaleString(),
     },
+    {
+      id: 2,
+      url: "https://utfs.io/f/f0176510-5ec5-46ae-9672-b34a282d3012-upvscp.jpg",
+      name: "test",
+      desc: "hello",
+      date: Date.now().toLocaleString(),
+    },
+    {
+      id: 3,
+      url: "https://utfs.io/f/f0176510-5ec5-46ae-9672-b34a282d3012-upvscp.jpg",
+      name: "test",
+      desc: "hello",
+      date: Date.now().toLocaleString(),
+    },
+    {
+      id: 4,
+      url: "https://utfs.io/f/f0176510-5ec5-46ae-9672-b34a282d3012-upvscp.jpg",
+      name: "test",
+      desc: "hello",
+      date: Date.now().toLocaleString(),
+    },
+    {
+      id: 5,
+      url: "https://utfs.io/f/f0176510-5ec5-46ae-9672-b34a282d3012-upvscp.jpg",
+      name: "test",
+      desc: "hello",
+      date: Date.now().toLocaleString(),
+    },
   ];
 
   return images;

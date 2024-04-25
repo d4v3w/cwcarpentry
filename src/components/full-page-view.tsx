@@ -8,7 +8,7 @@ export async function FullPageView(props: { photoId: string }) {
   const image = await getImage(idAsNumber);
 
   return (
-    <div className="flex h-full w-screen min-w-0 items-center justify-center text-white">
+    <div className="flex h-full w-full min-w-0 items-center justify-center text-white">
       <div className="flex-shrink flex-grow">
         <Image
           src={image.url}
